@@ -1,0 +1,16 @@
+---
+- name: Terraform Deployment Playbook
+  gather_facts: false
+  hosts: localhost
+  tasks:
+    - terraform:
+        project_path: "{{ project_path }}"
+        backend_config:
+          region: "{{ region_name }}"
+          bucket: "{{ backend_bucket_name }}"
+          key: "{{ tfstate_filename }}.tfstate"
+        state: "{{ action_state }}"
+        force_init: "{{ force_init }}"
+        variables:
+          bucket_name: "{{ bucket_name }}"
+          region: "{{ region_name }}"
