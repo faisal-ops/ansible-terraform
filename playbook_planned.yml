@@ -1,0 +1,11 @@
+---
+- name: Terraform Deployment Playbook
+  gather_facts: false
+  hosts: localhost
+  tasks:
+    - include_vars: name_vars.yml
+    - name: Create S3 Bucket
+      terraform:
+        project_path: "{{ project_path }}"
+        state: "{{ action_state }}"
+        plan_file: "{{ plan_file }}"
