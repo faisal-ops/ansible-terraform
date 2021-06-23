@@ -1,0 +1,6 @@
+project_path: "/home/faisal-tft/tf"
+action_state: "present"
+bucket_name: "test-bucket-by-faisal"
+region_name: us-east-1
+plan_file: "/home/faisal-tft/tf/custom-plan.tfplan"
+#force_init: yes
